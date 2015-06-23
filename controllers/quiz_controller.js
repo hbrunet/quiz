@@ -77,12 +77,12 @@ exports.create = function (req, res) {
             if (err) {
                 res.render('quizes/new', {quiz: quiz, errors: err.errors});
             } else {
-                quiz // save: guarda en DB campos pregunta y respuesta de quiz
+                quiz
                     .save({fields: ["pregunta", "respuesta", "tema"]})
                     .then(function () {
                         res.redirect('/quizes')
                     })
-            }      // res.redirect: Redirección HTTP a lista de preguntas
+            }
         }
     ).catch(function (error) {
             next(error)

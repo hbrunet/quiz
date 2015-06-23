@@ -4,8 +4,15 @@
         <input type="submit" value="Enviar">
 </form>
 <table>
+    <tr>
+        <th>Tema</th>
+        <th>Pregunta</th>
+        <th></th>
+        <th></th>
+    </tr>
     <% var i; for (i = 0; i < quizes.length; i++) { %>
     <tr>
+        <td><%= quizes[i].tema.toUpperCase() %></td>
         <td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
         <td><a href="quizes/<%= quizes[i].id %>/edit">
                 <button>editar</button>
